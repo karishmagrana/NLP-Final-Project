@@ -11,7 +11,7 @@ The rapid development of Large Language Models (LLMs) over the 21st century has 
 - few-shot learning with Big Bird model
 
 ### Alpaca-LORA
-
+-Alpaca-Lora notebook is works in progress to explore open-source LLMs on the tasks in this project
 
 ## Dataset and Data Processing
 General information about the dataset used in our project (for more information, please check https://arxiv.org/abs/2205.09148) and the data processing we perform on this dataset is included below.
@@ -20,9 +20,7 @@ General information about the dataset used in our project (for more information,
 This directory contains the following files:
    - **release_evidences.json**: a JSON file describing all possible evidences considered in the dataset.
    - **release_conditions.json**: a JSON file describing all pathologies considered in the dataset.
-   - **release_train_patients.zip**: a CSV file containing the patients of the training set.
-   - **release_validate_patients.zip**: a CSV file containing the patients of the validation set.
-   - **release_test_patients.zip**: a CSV file containing the patients of the test set.
+   
 #### Evidence Description
 Each evidence in the release_evidences.json file is described using the following entries:
 
@@ -57,5 +55,5 @@ Each patient in each of the 3 sets has the following attributes:
    - **DIFFERENTIAL_DIAGNOSIS**: The ground truth differential diagnosis for the patient. It is represented as a list of pairs of the form `[[patho_1, proba_1], [patho_2, proba_2], ...]` where `patho_i` is the pathology name (`condition_name` entry in the `release_conditions.json` file) and `proba_i` is its related probability.
 
 ### Data Processing
-The DataProcessing.ipynb notebook in this repo takes this French dataset and the details above and translates pathologies and evidences to English. It also adds ground truth ICD-10 code and then samples data to create train and validation datasets for few-shot learning. The notebook is able to parse model output and compute performance metrics.
+The DataProcessing.ipynb notebook in this repo takes this French dataset and the details above and translates pathologies and evidences to English. It also adds ground truth ICD-10 code and then samples data to create train and validation datasets for few-shot learning. We have uploaded the sample training, validation, and test data csv files onto this repository. The notebook is able to parse model output and compute performance metrics.
 
