@@ -15,9 +15,11 @@ The AlpacaLoRA.ipynb notebook is another way to explore open-source LLMs and the
 General information about the dataset used in our project (for more information, please check https://arxiv.org/abs/2205.09148) and the data processing we perform on this dataset is included below.
 
 ### Dataset Description
-This directory contains the following files:
+Our directory contains the following dataset-related files:
    - **release_evidences.json**: a JSON file describing all possible evidences considered in the dataset.
    - **release_conditions.json**: a JSON file describing all pathologies considered in the dataset.
+   - Train, Test, Validation csv files as our datasets for few-shot learning
+   - JSON and csv files for each of the outputs provided by the LLMs we trained and fine-tuned
    
 #### Evidence Description
 Each evidence in the release_evidences.json file is described using the following entries:
