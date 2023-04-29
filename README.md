@@ -12,7 +12,7 @@ This directory contains the following files:
    - **release_validate_patients.zip**: a CSV file containing the patients of the validation set.
    - **release_test_patients.zip**: a CSV file containing the patients of the test set.
 
-## Evidence Description
+### Evidence Description
 
 Each evidence in the `release_evidences.json` file is described using the following entries:
    - **name**: name of the evidence.
@@ -25,7 +25,7 @@ Each evidence in the `release_evidences.json` file is described using the follow
    - **possible-values**: the possible values for the evidences. Only valid for categorical and multi-choice evidences.
    - **value_meaning**: The meaning, in French and English, of each code that is part of the `possible-values` field. Only valid for categorical and multi-choice evidences.
 
-## Pathology Description
+### Pathology Description
 The file `release_conditions.json` contains information about the pathologies that patients in the datasets may suffer from. Each pathology has the following attributes:
    - **condition_name**: name of the pathology.
    - **cond-name-fr**: name of the pathology in French.
@@ -36,7 +36,7 @@ The file `release_conditions.json` contains information about the pathologies th
    - **antecedents**: data structure describing the set of antecedents characterizing the pathology. Each antecedent is represented by its corresponding `name` entry in the  `release_evidences.json` file.
 
 
-## Patient Description
+### Patient Description
 
 Each patient in each of the 3 sets has the following attributes:
    - **AGE**: the age of the synthesized patient.
@@ -46,13 +46,5 @@ Each patient in each of the 3 sets has the following attributes:
    - **INITIAL_EVIDENCE**: the evidence provided by the patient to kick-start an interaction with an ASD/AD system. This is useful during model evaluation for a fair comparison of ASD/AD systems as they will all begin an interaction with a given patient from the same starting point. The initial evidence is randomly selected from the binary evidences found in the evidence list mentioned above (i.e., `EVIDENCES`) and it is part of this list.
    - **DIFFERENTIAL_DIAGNOSIS**: The ground truth differential diagnosis for the patient. It is represented as a list of pairs of the form `[[patho_1, proba_1], [patho_2, proba_2], ...]` where `patho_i` is the pathology name (`condition_name` entry in the `release_conditions.json` file) and `proba_i` is its related probability.
 
-
-# Note:
-
-We hope this dataset will encourage future works for ASD and AD systems that consider the differential diagnosis and the severity of pathologies. It is important to keep in mind that this dataset is formed of synthetic patients and is meant for research purposes. Given the assumptions made during the generation process of this dataset, we would like to emphasize that the dataset should not be used to train and deploy a model prior to performing rigorous evaluations of the model performance and verifying that the system has proper coverage and representation of the population that it will interact with.
-
-It is important to understand that the level of specificity, sensitivity and confidence that a physician will seek when evaluating a patient will be influenced by the clinical setting. The dataset was built for acute care and biased toward high mortality and morbidity pathologies. Physicians will tend to consider negative evidences as equally important in such a clinical context in order to evaluate high acuity diseases.
-
-In the creation of the DDXPlus dataset, a small subset of the diseases was chosen to establish a baseline. Medical professionals have to consider this very important point when reviewing the results of models trained with this dataset, as the differential is considerably smaller. A smaller differential means less potential evidences to collect. It is thus essential to understand this point when we look at the differential produced and the evidence collected by a model based on this dataset.
-
+### Note:
 For more information, please check our [paper](https://arxiv.org/abs/2205.09148).
