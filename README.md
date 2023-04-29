@@ -3,15 +3,13 @@
 The rapid development of Large Language Models (LLMs) over the 21st century has sparked curiosity in diverse opportunities to apply deep learning with natural language. Our work evaluates the application of LLMs to diagnose patients in the clinical setting. Specifically, we apply OpenAI's GPT-3.5-Turbo with zero-shot learning and use few-shot learning with Big Bird and OpenAI's GPT-3-Davinci on an open-source French dataset (See more details below) encompassing 49 pathologies and various related questions and answers which we translate to English. We further extend the French dataset with manually labelled ICD-10 codes for a standardized, language-agnostic representation of each pathology. Our fine-tuned models and expanded dataset are made available and open-source for future development. Model performance for diagnosing patients is evaluated on three increasingly difficult tasks to identify partial representations and the full representation of each pathology's respective ICD-10 code. We find that our fine-tuned GPT-3-Davinci performs best. The development of future DrGPTs, while exciting and potentially useful, should be used carefully while considering the ethical implications of diagnosing and treating human patients.
 ## Large Language Models
 ### ChatGPT
--authenticate connection with OpenAI API
-- zero-shot learning with GPT-3.5-Turbo
-- fine-tuning and testing GPT-3-Davinci
+The ChatGPT.ipynb notebook helps authenticate a connection with OpenAI API so that we are able to perform zero-shot learning with GPT-3.5-Turbo and fine-tuning and testing with GPT-3-Davinci on the accuracy of medical diagnosis prediction.
 
 ### BigBird
-- few-shot learning with Big Bird model
+The BigBirdTextClassificaiton.ipynb notebook contains code to run few-shot learning with BigBird model on medical diagnosis using ICD-10 codes for 49 unique pathologies.
 
 ### Alpaca-LORA
--Alpaca-Lora notebook is works in progress to explore open-source LLMs on the tasks in this project
+The AlpacaLoRA.ipynb notebook is another way to explore open-source LLMs and their accuracy on medical diagnoses in this project. This notebook is still a work in progress.
 
 ## Dataset and Data Processing
 General information about the dataset used in our project (for more information, please check https://arxiv.org/abs/2205.09148) and the data processing we perform on this dataset is included below.
